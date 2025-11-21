@@ -1,0 +1,17 @@
+services:
+# ============================================================
+# Microservice
+# ============================================================
+  banking-server:
+    build: ./
+    image : boonchai/banking-service:0.0.1
+    container_name: banking-service
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - ms-net
+
+networks:
+  ms-net:
